@@ -16,6 +16,7 @@ const app=Vue.createApp({
     //`
     data(){
         return{
+            //datos reactivos
             mensaje:'mensaje desde un atributo data',
             mensaje2:'prueba M2'
         }
