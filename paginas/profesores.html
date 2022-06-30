@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3"></script>
+    <title>Profesores</title>
+</head>
+<body>
+   <div id="myApp">
+    <fieldset>
+        <legend> <b>Reporte de Profesores</b> </legend>
+        <dl  v-for="{nombre,apellido,edad,profesion,materia} in lista">
+            <hr>
+            <dt> <b>{{nombre}}  {{apellido}}</b></dt>
+            <dd>Edad:  {{edad}}</dd>
+            <dd> Profesión:  {{profesion}}</dd>
+            <dd> Materia impartida:  {{materia}}</dd>
+            <hr>
+        </dl>
+    </fieldset>
+    <button  v-on:click="agregarProfesor">Agregar Profesor</button>
+   </div> 
+   <script src="../JS/profesores.js"></script>
+</body>
+</html>
