@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3"></script>
+    <style>
+        label{
+            display: block;
+        }
+    </style>
+    <title>Estudiante Final</title>
+</head>
+<body>
+    <div id="myApp">
+        <h2>Ingreso Estudiantes</h2>
+        <label for="idNombre">Nombre:</label>
+        <input id="idNombre" type="text" v-model="mensaje" v-on:keypress.enter="eventoFinal">
+        <label for="idApellido">Apellido:</label>
+        <input id="idApellido" type="text" v-model="mensaje1" v-on:keypress.enter="eventoFinal">
+        <label for="idEdad">Edad:</label>
+        <input id="idEdad" type="text" v-model="mensaje2" v-on:keypress.enter="eventoFinal">
+        <br>
+        <br>
+        <button v-on:click="agregarEstudiante('I')">Agregar Inicio</button>
+        <button v-on:click="agregarEstudiante('F')">Agregar Fin</button>
+        
+      
+        <hr>
+        <ul>
+            <li v-for="({nombre,apellido,edad},index) in lista">
+                <p v-if="nombre">{{index+1}} : {{nombre}} - {{apellido}} - {{edad}}</p>
+                
+            </li>
+        </ul>
+        
+    </div>
+
+    <script src="../JS/estudianteFinal.js"></script>
+</body>
+</html>
