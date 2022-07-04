@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3"></script>
+    <style>
+        label {
+            display: block;
+
+        }
+
+
+
+        fieldset {
+            margin: 2em;
+        }
+
+        legend {
+
+            border-radius: 1em;
+            border: 0.1em solid;
+        }
+
+        div {
+            background: linear-gradient(to bottom, white, rgb(167, 207, 231));
+        }
+
+        button {
+            border-radius: 0.5em ;
+            border: solid 0.1em;
+            margin-left: 3em;
+        }
+    </style>
+    <title>Tareas</title>
+
+</head>
+
+<body>
+    <div id="myApp">
+        <fieldset>
+            <legend><b>INGRESO DE TAREAS DIARIAS</b> </legend>
+
+            <label for="idTarea">Tarea:</label>
+
+            <input id="idTarea" type="text" v-model="tarea" v-on:keypress.enter="agregarEnter">
+            <br>
+            <br>
+            <button v-on:click="agregarTarea">Añadir tarea</button>
+
+        </fieldset>
+
+        <fieldset>
+            <legend> <b> LISTA DE TAREAS DIARIAS</b></legend>
+            <dl v-for="({tarea},index) in lista">
+                <hr>
+                <dt> <b>Tarea {{index+1}}</b></dt>
+                <dd>{{tarea}}</dd>
+
+                <hr>
+            </dl>
+        </fieldset>
+
+        <br>
+    </div>
+    <script src="../JS/tareas.js"></script>
+</body>
+
+</html>
