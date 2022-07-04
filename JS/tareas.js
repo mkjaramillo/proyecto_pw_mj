@@ -14,7 +14,7 @@ const app = Vue.createApp({
         
         agregarTarea(){
            
-            this.lista.push({nombre:this.mensaje,apellido:this.mensaje1,edad:this.mensaje2})
+            this.lista.push({tarea:this.tarea})
             this.tarea=''
            
         },
